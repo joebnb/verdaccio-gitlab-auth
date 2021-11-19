@@ -1,0 +1,48 @@
+{
+  "name": "verdaccio-gitlab-auth",
+  "version": "0.0.1",
+  "description": "gitlab api auth",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@types/lru-cache": "^5.1.1",
+    "@verdaccio/commons-api": "^9.6.1",
+    "got": "^11.8.2",
+    "lru-cache": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/jest": "^24.0.21",
+    "@types/node": "^12.12.5",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@verdaccio/babel-preset": "^9.6.1",
+    "@verdaccio/eslint-config": "^9.3.2",
+    "@verdaccio/types": "^9.5.0",
+    "eslint": "^6.6.0",
+    "jest": "^26.0.1 ",
+    "prettier": "^1.19.1",
+    "standard-version": "^8.0.0",
+    "typescript": "^3.9.5"
+  },
+  "keywords": [
+    "verdaccio-]"
+  ],
+  "license": "MIT",
+  "repository": "joebnb/gitlab-auth",
+  "author": "joebnb <joebnb@qq.com>",
+  "scripts": {
+    "release": "standard-version -a -s",
+    "build": "npm run build:types && npm run build:js",
+    "build:js": "babel src/ --out-dir lib --extensions \".ts,.tsx\"",
+    "dev": "babel --watch src/ --out-dir lib --extensions \".ts,.tsx\"",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "jest",
+    "lint": "eslint \"**/*.{js,ts}\""
+  }
+}
